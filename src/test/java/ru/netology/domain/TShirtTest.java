@@ -17,7 +17,13 @@ class TShirtTest {
     private TShirt third = new TShirt(
             1, "Google T-Shirt for Mens", 17_60,"white", "L"
     );
-    private Product fourth = new Product();
+    private TShirt fourth = new TShirt(
+            1, "Google T-Shirt for Mens", 17_60,"black", "L"
+    );
+    private TShirt fifth = new TShirt(
+            1, "Google T-Shirt for Mens", 17_60,"white", "M"
+    );
+    private Product sixth = new Product();
 
     //Constructor without parameters
     @Test
@@ -80,37 +86,51 @@ class TShirtTest {
     }
 
     @Test
-    void shouldUseEqualTrue() {
+    void shouldUseEqualcTrue() {
         boolean expected = true;
         boolean actual = first.equals(third);
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldUseEqualFalse() {
+    void shouldUseEqualcFalse() {
         boolean expected = false;
         boolean actual = first.equals(second);
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCanEqualLink() {
+    void shouldCanEqualcLink() {
         boolean expected = true;
         boolean actual = first.equals(first);
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCanEqualNull() {
+    void shouldCanEqualcNull() {
         boolean expected = false;
         boolean actual = first.equals(null);
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCanEqualClass() {
+    void shouldCanEqualcClass() {
+        boolean expected = false;
+        boolean actual = first.equals(sixth);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCanEqualcReturn() {
         boolean expected = false;
         boolean actual = first.equals(fourth);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCanEqualcReturn1() {
+        boolean expected = false;
+        boolean actual = first.equals(fifth);
         assertEquals(expected, actual);
     }
 

@@ -16,7 +16,16 @@ class BookTest {
     private Book third = new Book(
             1, "Google It!: A History of Google", 14_62, "Anna Crowley Redding", 300, 2015
     );
-    private Product fourth = new Product();
+    private Book fourth = new Book(
+            1, "Google It!: A History of Google", 14_62, "Anna", 300, 2015
+    );
+    private Book fifth = new Book(
+            1, "Google It!: A History of Google", 14_62, "Anna Crowley Redding", 350, 2015
+    );
+    private Book sixth = new Book(
+            1, "Google It!: A History of Google", 14_62, "Anna Crowley Redding", 300, 2019
+    );
+    private Product seventh = new Product();
 
     //Constructor without parameters
     @Test
@@ -104,37 +113,58 @@ class BookTest {
     }
 
     @Test
-    void shouldUseEqualTrue() {
+    void shouldUseEqualsTrue() {
         boolean expected = true;
         boolean actual = first.equals(third);
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldUseEqualFalse() {
+    void shouldUseEqualsFalse() {
         boolean expected = false;
         boolean actual = first.equals(second);
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCanEqualLink() {
+    void shouldCanEqualsLink() {
         boolean expected = true;
         boolean actual = first.equals(first);
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCanEqualNull() {
+    void shouldCanEqualsNull() {
         boolean expected = false;
         boolean actual = first.equals(null);
         assertEquals(expected, actual);
     }
 
     @Test
-    void shouldCanEqualClass() {
+    void shouldCanEqualsClass() {
+        boolean expected = false;
+        boolean actual = first.equals(seventh);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCanEqualsReturn() {
         boolean expected = false;
         boolean actual = first.equals(fourth);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCanEqualsReturn1() {
+        boolean expected = false;
+        boolean actual = first.equals(fifth);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldCanEqualsReturn2() {
+        boolean expected = false;
+        boolean actual = first.equals(sixth);
         assertEquals(expected, actual);
     }
 
